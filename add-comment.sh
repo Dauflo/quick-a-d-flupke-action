@@ -40,6 +40,7 @@ get_checks() {
 	body=$(curl -sSL -H "${AUTH_HEADER}" -H "${API_HEADER}" "${URI}/repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}/check-runs")
 
 	echo $body
+	echo "${URI}/repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}/check-runs"
 
 	checks=$(echo "$body" | jq --raw-output '.check_runs | .[] | {name: .name, status: .status, conclusion: .conclusion} | @base64')
 
