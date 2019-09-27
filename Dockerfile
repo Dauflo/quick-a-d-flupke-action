@@ -16,6 +16,6 @@ RUN apk add --no-cache \
         jq
 
 
-COPY add-comment.sh /usr/local/bin/add-comment
+COPY add-comment.sh /add-comment.sh
 
-CMD ["add-comment"]
+CMD ["sh" ,"/add-comment.sh"]
