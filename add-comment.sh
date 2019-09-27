@@ -8,7 +8,7 @@ API_VERSION=v3
 API_HEADER="Accept: application/vnd.github.${API_VERSION}+json; application/vnd.github.antiope-preview+json"
 AUTH_HEADER="Authorization: token ${GITHUB_TOKEN}"
 
-PICURE_URL=nothingrn
+PICURE_URL=https://github.com/Dauflo/quick-and-flupke-action/blob/master/quick_and_flupke_oups.jpg
 
 delete_comment_if_exists() {
 	# Get all the comments for the pull request.
