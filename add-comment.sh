@@ -48,6 +48,8 @@ get_checks() {
 		state=$(echo "$check" | jq --raw-output '.status')
 		conclusion=$(echo "$check" | jq --raw-output '.conclusion')
 
+		echo $name
+
 		if [[ "$GITHUB_ACTION" == "$name" ]]; then
 			# Continue if it's us.
 			continue
@@ -68,6 +70,8 @@ get_checks() {
 			exit 0
 		fi
 	done
+
+	echo $IN_PROGRESS
 
 	# If we got in progress checks then sleep and loop again.
 	if [[ "$IN_PROGRESS" == "1" ]]; then
