@@ -39,6 +39,8 @@ get_checks() {
 	# Get all the checks for the sha.
 	body=$(curl -sSL -H "${AUTH_HEADER}" -H "${API_HEADER}" "${URI}/repos/${GITHUB_REPOSITORY}/commits/${GITHUB_SHA}/check-runs")
 
+	echo $body
+
 	checks=$(echo "$body" | jq --raw-output '.check_runs | .[] | {name: .name, status: .status, conclusion: .conclusion} | @base64')
 
 	IN_PROGRESS=0
