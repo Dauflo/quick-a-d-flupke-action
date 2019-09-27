@@ -10,7 +10,11 @@ LABEL "homepage" = "https://github.com/Dauflo/quick-and-flupke-action"
 
 RUN apk add --no-cache \
         bash \
-        curl
+        ca-certificates \
+        coreutils \
+        curl \
+        jq
+
 
 COPY add-comment.sh /usr/local/bin/add-comment
 
